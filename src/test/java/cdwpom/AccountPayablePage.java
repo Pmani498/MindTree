@@ -55,6 +55,23 @@ public class AccountPayablePage extends BaseExecutionClass
 					wdHelper.isElementClickable(AccountPayablePOM.cardnickNameTxtFld)&
 					wdHelper.isElementClickable(AccountPayablePOM.enterANewCardDrpDwn))
 			{
+				
+				public void eCom_Regression_AccountPayable_CreaditDebitCard1() throws Exception
+				{
+					reusableUtility.launchApplication();
+					reusableUtility.login();
+					accountPayablePageComponents.navigateToAccountPayablePage();
+					accountPayablePageComponents.navigateToPaymentMethodPAge();
+					wdHelper.enableRadioButton(AccountPayablePOM.creditCardPamentRadioBtn);
+					wdHelper.switchToNewWindow();
+					wdHelper.clickElement(AccountPayablePOM.acceptBtn);
+					if(wdHelper.isElementClickable(AccountPayablePOM.cardNumberTxtFld)&
+				    	wdHelper.isElementClickable(AccountPayablePOM.nameTxtFld)&
+							wdHelper.isElementClickable(AccountPayablePOM.cardMonthTxtFld)&
+							wdHelper.isElementClickable(AccountPayablePOM.cardYearTxtFld)&
+							wdHelper.isElementClickable(AccountPayablePOM.cardnickNameTxtFld)&
+							wdHelper.isElementClickable(AccountPayablePOM.enterANewCardDrpDwn))
+					{
 		report.addReportStep("Verify all the elements functionality in credit/debit card payment window", "Verified all the elements functionality in credit/debit card payment window", StepResult.PASS);
 			}
 			else
